@@ -30,8 +30,8 @@ Firebase
 - [x] Install Firebase
 - [x] Create a portal
 - [x] Firebase Auth
-- [] Form For Expense
-- [] Able to save lists
+- [x] Form For Expense
+- [x] Able to save lists
 - [] Connect to firebase collection
 - [] Display for list informations
 - [] Display the total expense
