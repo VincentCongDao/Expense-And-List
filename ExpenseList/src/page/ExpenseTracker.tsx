@@ -63,40 +63,49 @@ function ExpenseTracker() {
             <form onSubmit={handleSubmit} className="form-wrapper">
                 <label className="form-label">
                     What is the item?
-                    <input
-                        type="text"
-                        value={intakeItems}
-                        onChange={intakeInputHandler}
-                        required
-                    />
+                    <div className="form-container">
+                        <input
+                            type="text"
+                            value={intakeItems}
+                            onChange={intakeInputHandler}
+                            required
+                        />
+                    </div>
                 </label>
                 <label className="form-label">
                     What was the price of the item?
-                    <input
-                        type="number"
-                        value={intakePrice}
-                        onChange={intakePriceHandler}
-                        required
-                    />
+                    <div className="form-container">
+                        <input
+                            type="number"
+                            value={intakePrice}
+                            onChange={intakePriceHandler}
+                            required
+                        />
+                    </div>
                 </label>
-                <label>
-                    <select onChange={moneyType} value={moneyCategory} required>
-                        <option value="Income">Income</option>
-                        <option value="Expense">Expense</option>
-                        <option value="Saving">Saving</option>
-                    </select>
+                <label className="form-label">
+                    What type is the item?
+                    <div className="form-container">
+                        <select onChange={moneyType} value={moneyCategory} required>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                            <option value="Saving">Saving</option>
+                        </select>
+                    </div>
                 </label>
                 <label className="form-label">
                     Date:{" "}
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker
-                            label="Select Date"
-                            value={userDate}
-                            onChange={(newDate) => setUserDate(newDate)}
-                        />
-                    </LocalizationProvider>
+                    <div className="form-container">
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker
+                                label="Select Date"
+                                value={userDate}
+                                onChange={(newDate) => setUserDate(newDate)}
+                            />
+                        </LocalizationProvider>
+                    </div>
                 </label>
-                <button type="submit">Submit</button>
+                <button className="form-button" type="submit">Submit</button>
             </form>
         </ElementContainer>
     );

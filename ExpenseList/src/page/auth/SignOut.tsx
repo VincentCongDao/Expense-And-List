@@ -1,10 +1,15 @@
 import { Avatar } from "@mui/material";
 import { getAuth, signOut } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 const SignOut: React.FC = () => {
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const dropdownSignout = () => {
+        setDropdownVisible(!dropdownVisible)
+    }
     const navigate = useNavigate()
     const handleSignOut = () => {
         const auth = getAuth();
@@ -21,9 +26,14 @@ const SignOut: React.FC = () => {
             <Avatar
                 alt="user"
                 src="https://example.com/user-avatar.jpg"
-                onClick={handleSignOut}
+                onClick={dropdownSignout}
                 style={{ cursor: "pointer" }}
             />
+            {dropdownVisible && (
+                <div className="dropdown">
+                    <button onClick={handleSignOut}>Sign Out</button>
+                </div>
+            )}
         </li>
     )
 }

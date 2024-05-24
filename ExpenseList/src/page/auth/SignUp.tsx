@@ -24,15 +24,15 @@ const SignUp = () => {
     }
     return (
         <ElementContainer>
-            <form className="form-sign sign-up-form" onSubmit={onSubmit}>
-                <div>
-                    <div>
-                        <div>
+            <form className="form-sign sign-up-form " onSubmit={onSubmit}>
+                <div className="form-sign-wrapper">
+                    <div className="form-sign-container">
+                        <div className="form-sign-content">
                             <label htmlFor="email-address">Email Address</label>
                             <input type="email" value={email} onChange={e => setEmail(e.target.value)}
                                 required placeholder="Email address" />
                         </div>
-                        <div>
+                        <div className="form-sign-content">
                             <label htmlFor="password">Password</label>
                             <input type="password" value={password} onChange={e => setPassword(e.target.value)}
                                 required placeholder="Create your password" />

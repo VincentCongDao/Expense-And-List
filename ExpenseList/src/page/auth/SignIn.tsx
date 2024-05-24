@@ -43,33 +43,36 @@ const SignIn = () => {
     return (
         <ElementContainer>
             <form className="form-sign sign-in-form" onSubmit={onLogin}>
-                <div>
-                    <div>
-                        <div>
+                <div className="form-wrapper">
+                    <div className="form-container">
+                        <div className="form-content">
                             <label htmlFor="email-address">Email Address</label>
                             <input type="email" value={email} onChange={e => setEmail(e.target.value)}
                                 required placeholder="Email address" />
                         </div>
-                        <div>
+                        <div className="form-content">
                             <label htmlFor="password">Password</label>
                             <input type="password" value={password} onChange={e => setPassword(e.target.value)}
                                 required placeholder="Create your password" />
                         </div>
+                        <div className="reset-password">
+                            <NavLink to="/resetpassword">
+                                Reset Your Password
+                            </NavLink>
+                        </div>
                         <button type="submit">Sign In</button>
-
-                        <div>
+                        <div className="form-account">
                             <p>
-                                Already have an account? {" "}
-
-                                <NavLink to="/resetpassword">
-                                    Reset Your Password
-                                </NavLink>
-                                <NavLink to="/signup">
-                                    Sign Up
-                                </NavLink>
+                                Don't have an account?
                             </p>
+                            <NavLink to="/signup">
+                                Sign Up
+                            </NavLink>
                         </div>
                     </div>
+                </div>
+                <div className="form-side-image">
+                    <img src="" alt="" />
                 </div>
             </form>
         </ElementContainer>
