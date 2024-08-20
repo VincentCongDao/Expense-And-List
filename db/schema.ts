@@ -1,4 +1,5 @@
 import { boolean, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
 
 export const accounts = pgTable("accounts", {
   id: serial("id").primaryKey(),
@@ -7,3 +8,5 @@ export const accounts = pgTable("accounts", {
   createdAt: timestamp("created_at"),
   updatedAt: timestamp("updated_at"),
 });
+
+export const insertAccountsSchema = createInsertSchema(accounts);
