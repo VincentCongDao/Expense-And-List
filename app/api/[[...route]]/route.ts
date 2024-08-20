@@ -1,13 +1,18 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
 
-import author from "./author";
-import book from "./book";
 import accounts from "./accounts";
 
 export const runtime = "edge";
 
 const app = new Hono().basePath("/api");
+
+// app.onError((err, c) => {
+//   if (err instanceof HTTPException) {
+//     return err.getResponse();
+//   }
+//   return c.json({ error: "Internal Error" }, 500);
+// });
 
 const routes = app.route("/accounts", accounts);
 
